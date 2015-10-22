@@ -18,7 +18,7 @@ function draw(){
 	background(0);
 	var dist = dJoints(arm1,arm2);
 	var a = (Math.pow(armLength,2)-Math.pow(armLength,2)+Math.pow(dist,2)/(2*dist));
-
+//	var a = Math.sqrt((Math.pow(armLength,2)-Math.pow(armLength,2)+Math.pow(dist,2))/2)
 	var h = Math.sqrt(Math.pow(armLength,2)-Math.pow(a,2));
 
 	var px = arm1.x+a*(arm2.x-arm1.x)/dist;
