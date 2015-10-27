@@ -9,7 +9,7 @@ function setup(){
 	strokeWeight(2);
 	ellipseMode(CENTER);
 	armLength = 100;
-	correctSpeed = 5;
+	correctSpeed = .05;
 }
 function draw(){
 	background(0);
@@ -24,8 +24,8 @@ function draw(){
 			if(abs(dist(arms[ar].x,arms[ar].y,arms[ar-1].x,arms[ar-1].y))>armLength*2){
 				var correct = createVector(arms[ar].x-arms[ar-1].x,arms[ar].y-arms[ar-1].y);
 				correct.normalize();
-				arms[ar].x -= correct.x*correctSpeed;
-				arms[ar].y -= correct.y*correctSpeed;
+				arms[ar].x -= correct.x*correctSpeed*(abs(dist(arms[ar].x,arms[ar].y,arms[ar-1].x,arms[ar-1].y))-(armLength*2));
+				arms[ar].y -= correct.y*correctSpeed*(abs(dist(arms[ar].x,arms[ar].y,arms[ar-1].x,arms[ar-1].y))-(armLength*2));
 				line(arms[ar].x,arms[ar].y,arms[ar-1].x,arms[ar-1].y);
 			}
 		}else{
