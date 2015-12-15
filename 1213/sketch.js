@@ -4,19 +4,31 @@ var armLength;
 var arms=[];
 var correctSpeed;
 var elSize= 30;
+var displayIntro;
 
 function setup(){
 	createCanvas(windowWidth, windowHeight);
 	background(0);
+	displayIntro = true;
+	fill(255)
+	noStroke()
+	ellipseMode(CENTER)
+	textAlign(CENTER)
+	textSize(32)
+	text("Click anywhere to begin",windowWidth/2,windowHeight/2)	
+
 	stroke(255);
 	strokeWeight(1);
-	ellipseMode(CENTER);
+
 	armLength = 75;
 	correctSpeed = .1;
+	
 }
 function draw(){
-	background(0);
-	
+	if(!displayIntro){
+		background(0);
+	}
+
 	for(var ar in arms){
 		if(ar>0){
 			if(abs(dist(arms[ar].x,arms[ar].y,arms[ar-1].x,arms[ar-1].y))>20){
@@ -55,7 +67,7 @@ function getSelectedArm(){
 }
 
 function mousePressed() {
-
+	displayIntro = false;
 	var selectedArm = getSelectedArm()
 	
 	if(selectedArm == undefined){

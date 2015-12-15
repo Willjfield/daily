@@ -1,21 +1,21 @@
 "use strict"
 
-var someVar
+var radius
 var animation
 
 function setup(){
 	createCanvas(800,800)
-	someVar = 3.67
-	animation = new Timeline('someVar')
-	animation.addKey(500, 2,'linear')
-	animation.addKey(832,4,'linear')
-	animation.addKey(100,5,'linear')
-	//We need to have Timeline order the keyframes sequentially on its own
+	radius = 3.67
+	animation = new Timeline('radius')
+	animation.addKey(200, 1,'linear')
+	animation.addKey(150,2,'linear')
+	animation.addKey(250,2.5,'linear')
+	animation.addKey(500,3,'linear')
 	fill(255)
 }
 function draw(){
 	background(0)
-	ellipse(200,200,someVar,someVar)
+	ellipse(200,200,radius,radius)
 }
 
 function mousePressed(){
