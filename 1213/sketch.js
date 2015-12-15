@@ -39,7 +39,7 @@ function draw(){
 }
 function keyTyped() {
   if (key === 'z') {
-      arms.pop();
+	arms.pop();
   	elSize *= 1.333333333333334
   }
   return false; // prevent any default behavior
